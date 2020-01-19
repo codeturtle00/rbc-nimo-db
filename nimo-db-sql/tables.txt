@@ -1,0 +1,58 @@
+            List of relations
+ Schema |     Name     | Type  |  Owner   
+--------+--------------+-------+----------
+ nimodb | all_invoices | table | chenka51
+ nimodb | all_offers   | table | chenka51
+ nimodb | client       | table | chenka51
+ nimodb | invoice      | table | chenka51
+ nimodb | offer        | table | chenka51
+ nimodb | partner      | table | chenka51
+ nimodb | subscription | table | chenka51
+(7 rows)
+
+select * from client;
+ client_id | firstname | lastname 
+-----------+-----------+----------
+         1 | Karen     | Chen
+         2 | Stella    | Cai
+         3 | Jacky     | Yang
+         4 | Alex      | Shih
+(4 rows)
+
+select * from partner;
+ partner_id | partner_name  
+------------+---------------
+         11 | RBC
+         22 | Fido
+         33 | Toronto Hydro
+         44 | Telus
+         55 | Netflix
+(5 rows)
+
+select * from subscription;
+ client_id | partner_id 
+-----------+------------
+         1 |         11
+         1 |         22
+         1 |         33
+         1 |         44
+(4 rows)
+
+select * from invoice;
+ invoice_id | client_id | partner_id | amount |  due_date  
+------------+-----------+------------+--------+------------
+        111 |         1 |         11 | 680.18 | 2020-02-16
+        222 |         1 |         22 |  35.45 | 2020-02-19
+        333 |         1 |         33 |  59.26 | 2020-02-09
+        444 |         1 |         44 |  58.42 | 2020-02-18
+        555 |         2 |         55 |  12.45 | 2020-01-31
+(5 rows)
+
+select * from offer;
+[?1049h[22;0;0t[?1h=
+ offer_id | partner_id |                  title                  |                      summary                      |                                 content                                 
+----------+------------+-----------------------------------------+---------------------------------------------------+----------- -------------------------------------------------------------
+     1111 |         22 | FIDO WISHES YOU A HAPPY LUNAR NEW YEAR! | Add 3GB of data for $10/month! Offer ends Jan 31. | For limite d time only, add 3GB of data to your plan for $10/month     +
+          |            |                                         |                                                   |     on sel ect plans online or in-store. Catch this deal while you can!
+     2222 |         55 | Upgrade to Netflix Primium!             | Watch in Ultra HD! Upgrade to Premium today!      | Watch in U ltra HD! Upgrade to Premium today!
+(2 rows)
